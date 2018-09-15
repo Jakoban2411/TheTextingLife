@@ -7,19 +7,23 @@ public class StoryScript : MonoBehaviour {
 
     [SerializeField] Text StoryTextComponent;
     [SerializeField] StoryStatesObject StartingState;
-    [SerializeField] Vector2 StartDialoguePosition;
+    [SerializeField] Vector3 StartDialoguePosition;
+    [SerializeField] Vector3 PlayerDialoguePosition;
     StoryStatesObject[] NextStates;
     StoryStatesObject CurrentState;
     [SerializeField] GameObject ParentImage;
-    Image NewSpeechBubbletoGenerate, NextSpeechBubble;
-    Vector2 NextPosition;
+    GameObject NewSpeechBubbletoGenerate;
+    Image SpeechBubble;
+    Sprite NextSpeechBubble;
+    Vector3 NextPosition;
 	// Use this for initialization
 	void Start ()
     {
         CurrentState = StartingState;
         StoryTextComponent.text = CurrentState.GetStateDialogue();
         NextStates = CurrentState.GetNextStates();
-        NextPosition = StartDialoguePosition + new Vector2(0, 50);
+        NextPosition = StartDialoguePosition + new Vector3(0, 50,0);
+        NewSpeechBubbletoGenerate = new GameObject();
     }
 	
 	// Update is called once per frame
@@ -28,26 +32,29 @@ public class StoryScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             CurrentState = NextStates[0];
+            StoryTextComponent.text = CurrentState.GetStateDialogue();
             NextStates = CurrentState.GetNextStates();
-            NextSpeechBubble = CurrentState.GetDialogueImage();
-            NewSpeechBubbletoGenerate = ParentImage.AddComponent<Image>();
-            NewSpeechBubbletoGenerate.sprite = NextSpeechBubble.sprite;
+            NextSpeechBubble = CurrentState.GetDialogueSprite();
+            SpeechBubble = NewSpeechBubbletoGenerate.AddComponent<Image>();
+            SpeechBubble.sprite = NextSpeechBubble;
             NewSpeechBubbletoGenerate.GetComponent<RectTransform>().SetParent(ParentImage.transform);
             NewSpeechBubbletoGenerate.transform.position = NextPosition;
-            NextPosition =NextPosition+ new Vector2(0, 50);
+            NewSpeechBubbletoGenerate.transform.localScale = new Vector3(2, 2, 2);
+            NextPosition =NextPosition+ new Vector3(0, 50,0);
+            NewSpeechBubbletoGenerate.SetActive(true);
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 CurrentState = NextStates[1];
                 NextStates = CurrentState.GetNextStates();
             }
-            else
+            /*else
             {
                 CurrentState = NextStates[2];
                 NextStates = CurrentState.GetNextStates();
-            }
+            }*/
         }
     }
 }

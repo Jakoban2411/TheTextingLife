@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12e366e677473f46ab057a515f70563, type: 3}
   m_Name: Negative
   m_EditorClassIdentifier: 
-  DialogueBubble: {fileID: 0}
-  Dialogue: 
-  NextStates: []
+  Dialogue: '!LAbofn'
+  DialSpri: {fileID: 21300000, guid: 9c81c21d100927e4bb760408b7d2599d, type: 3}
+  NextStates:
+  - {fileID: 11400000, guid: 606c4390937f35f4ca965d306b5210c0, type: 2}
+  - {fileID: 11400000, guid: d47d0e72cc49c7a4cbe5e076eccec0d4, type: 2}

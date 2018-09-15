@@ -11,8 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12e366e677473f46ab057a515f70563, type: 3}
   m_Name: StartState
   m_EditorClassIdentifier: 
-  DialogueBubble: {fileID: 0}
-  Dialogue: Hey! Did Shay talk to you about me?
+  Dialogue: 'How do you want to reply?
+
+    Negative: Oh yeah.What do you want?
+
+    Positive: Oh yeah,sorry Totally forgot. Last night was CRAZY!'
+  DialSpri: {fileID: 21300000, guid: 30d127b9d54502342b1ba2ebcac61dd7, type: 3}
   NextStates:
   - {fileID: 11400000, guid: 606c4390937f35f4ca965d306b5210c0, type: 2}
   - {fileID: 11400000, guid: 4b30186a898dd59498588c473e4c2620, type: 2}

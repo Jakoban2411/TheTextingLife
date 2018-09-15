@@ -6,8 +6,9 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "State")]
 public class StoryStatesObject : ScriptableObject
 {
-    [SerializeField] Image DialogueBubble;
     [TextArea(10, 15)] [SerializeField] string Dialogue;
+    [SerializeField] Sprite MyReplySprite;
+    [SerializeField] Sprite PlayerReplySprite;
     [SerializeField] StoryStatesObject[] NextStates;
     public string GetStateDialogue()
     {
@@ -17,8 +18,8 @@ public class StoryStatesObject : ScriptableObject
     {
         return NextStates;
     }
-    public Image GetDialogueImage()
+    public Sprite GetDialogueSprite()
     {
-        return DialogueBubble;
+        return MyReplySprite;
     }
 }
