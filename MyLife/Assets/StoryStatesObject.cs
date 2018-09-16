@@ -22,4 +22,8 @@ public class StoryStatesObject : ScriptableObject
     {
         return MyReplySprite;
     }
+    public Sprite GetPlayerSprite()
+    {
+        return PlayerReplySprite;
+    }
 }

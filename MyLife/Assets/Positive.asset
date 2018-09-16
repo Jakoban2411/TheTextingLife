@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Positive
   m_EditorClassIdentifier: 
   Dialogue: Labo
-  DialSpri: {fileID: 21300000, guid: 9c81c21d100927e4bb760408b7d2599d, type: 3}
+  MyReplySprite: {fileID: 21300000, guid: a36b8b0fd36bd354a835dd51b77f567a, type: 3}
+  PlayerReplySprite: {fileID: 21300000, guid: 4c1c770f4291ac747a7f1ba3c7a442f9, type: 3}
   NextStates:
   - {fileID: 11400000, guid: 4b30186a898dd59498588c473e4c2620, type: 2}
   - {fileID: 11400000, guid: d47d0e72cc49c7a4cbe5e076eccec0d4, type: 2}
